@@ -124,7 +124,7 @@ NOTE: Even when parameterized, stored procedures can still introduce SQL injecti
 
 #### Option 2: Positive Server-Side Input Validation
 
-NOTE: This is not a complete defense.
+NOTE: This is <b>not</b> a complete defense.
 
 	The reason for positive server-side input validation failing to act as a complete defense is because many applications require special characters, such as text areas or APIs for mobile applications.  
 
