@@ -2,6 +2,23 @@
 
 ## Topic: Injection
 
+### CWE Injection Attacks:
+
++ Cross-site Scripting
++ SQL Injection
++ External Control of File Name or Path
+
+### Table of Contents
+
+Notable Common Weakness Enumerations (CWEs) include:
+Overview
+Common Injections
+How to Detect Vulnerabilities
+How to Identify Flaws Before Production Deployment
+Example Attack Scenarios
+Review of Sample Attack Scenarios
+References
+
 ### Notable Common Weakness Enumerations (CWEs) include:
 
 CWE079: Cross-site Scripting
@@ -51,7 +68,6 @@ Some of the more common injections are:
 
 (5) LDAP
 
-
 (6) Expression Language (EL) or Object Graph Navigation Library (ONGL) injection.
 
 NOTE: The concept is identical to all interpreters.
@@ -60,7 +76,7 @@ NOTE: The concept is identical to all interpreters.
 
 ### How to Detect Vulnerabilities
 
-Best method of detecting if applications are vulnerable to injections: Source Code Reviews
+Best method of detecting if applications are vulnerable to injections: <b>Source Code Reviews.</b>
 
 Detection Automation
 
