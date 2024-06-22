@@ -1,12 +1,8 @@
-# Write-Up-A03-Injection
-
 # OWASP Top 10 - A03:2021 - Injection Write-Up
 
-OWASP Top 10 - A03:2021-Injection
+## Topic: Injection
 
-Topic: Injection
-
-Notable Common Weakness Enumerations (CWEs) include:
+### Notable Common Weakness Enumerations (CWEs) include:
 
 CWE079: Cross-site Scripting
 
@@ -16,7 +12,7 @@ CWE-89: SQL Injection
 
 CWE–73: External Control of File Name or Path
 
-Overview
+### Overview
 
 An application is vulnerable to an attack when:
 
@@ -41,6 +37,8 @@ An application is vulnerable to an attack when:
 (4) Hospital data is directly [(a) used or (b) concatenated].  The SQL or command contains the 
       structure and malicious data in dynamic queries, commands, or stored procedures.  
 
+### Common Injections
+
 Some of the more common injections are:
 
 (1) SQL
@@ -60,7 +58,7 @@ NOTE: The concept is identical to all interpreters.
 
 
 
-How to Detect Vulnerabilities
+### How to Detect Vulnerabilities
 
 Best method of detecting if applications are vulnerable to injections: Source Code Reviews
 
@@ -83,7 +81,8 @@ Strongly encouraged detection strategy: Automated Testing of all data inputs, in
 …and…
 
 (7) XML
-How to Identify Flaws Before Production Deployment
+
+### How to Identify Flaws Before Production Deployment
 
 To identify introduced injection flaws before production deployment, organizations can include the following in their CI/CD pipeline:
 
@@ -97,7 +96,7 @@ How to Prevent Injection Exploits
 
 Preventing injection requires keeping data separate from commands & queries:
 
-Option 1 (THE PREFERRED OPTION): Use a Safe API
+#### Option 1 (THE PREFERRED OPTION): Use a Safe API
 
 Use a safe API, which… 	(a) avoids using the interpreter entirely,
 
@@ -108,25 +107,25 @@ Use a safe API, which… 	(a) avoids using the interpreter entirely,
 NOTE: Even when parameterized, stored procedures can still introduce SQL injection if PL/SQL or T-SQL concatenates queries and data or executes hostile data with EXECUTE IMMEDIATE or exec().  
 
 
-Option 2: Positive Server-Side Input Validation
+#### Option 2: Positive Server-Side Input Validation
 
 NOTE: This is not a complete defense.
 
 	The reason for positive server-side input validation failing to act as a complete defense is because many applications require special characters, such as text areas or APIs for mobile applications.  
 
-Option 3: Escape special characters using the specific escape syntax for that interpreter.
+#### Option 3: Escape special characters using the specific escape syntax for that interpreter.
 
 NOTE: This is for any residual dynamic queries.
 
-	SQL structures such as table names, column names, and so on, cannot be escaped, and thus user-supplied structure names are dangerous.  This is ac ommon issue in report-writing software.  
+	SQL structures such as table names, column names, and so on, cannot be escaped, and thus user-supplied structure names are dangerous.  This is a common issue in report-writing software.  
 
-OPTION 4: Use LIMIT and other SQL controls within queries.
+#### OPTION 4: Use LIMIT and other SQL controls within queries.
 
 The aim here is to prevent mass disclosure of records in case of SQL injection.
 
-Example Attack Scenarios
+### Example Attack Scenarios
 
-Attack Scenario #1
+#### Attack Scenario #1
 
 An application uses untrusted data in the construction of the following vulnerable SQL call:
 
@@ -147,7 +146,7 @@ String[space]Query[space][equalsign][space]SELECT[space][backslash][asterisk][sp
 
 
 
-Attack Scenario #2
+#### Attack Scenario #2
 
 Similarly, an application’s blind trust in frameworks may result in queries that are still vulnerable, (e.g., Hibernate Query Language (HQL)): 
 
@@ -176,15 +175,17 @@ Sample Attack Scenario #2 Code:
 
 Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" + request.getParameter("id") + "'");
 
-Review of Sample Attack Scenario #1 & Attack Scenario #2
+### Review of Sample Attack Scenario #1 & Attack Scenario #2
 
-	In both cases above, the attacker modifies the ‘id’ parameter value in their browser to send: ‘ UNION SLEEP(10);-.  For instance…
+In both cases above, the attacker modifies the ‘id’ parameter value in their browser to send: ‘ UNION SLEEP(10);-.  For instance…
 
 http://example.com/app/accountView?id=' UNION SELECT SLEEP(10);--
 
 What this does: The code changes the meaning of both queries to return all the records from the accounts table.  
 
 More dangerous attacks could: Modify or delete data or even invoke stored procedures.
-References
-A03 - Injection.  OWASP Website.  Retrieved from https://owasp.org/Top10/A03_2021-Injection/
+
+### References
+
+A03 - Injection.  OWASP Website.  Retrieved from [https://owasp.org/Top10/A03_2021-Injection/](https://owasp.org/Top10/A03_2021-Injection/)
 
