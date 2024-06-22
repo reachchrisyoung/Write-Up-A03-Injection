@@ -197,7 +197,7 @@ Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" + request.ge
 
 In both cases above, the attacker modifies the ‘id’ parameter value in their browser to send: ‘ UNION SLEEP(10);-.  For instance…
 
-http://example[dot]com/app/accountView?id=' UNION SELECT SLEEP(10);--
+http://[nospace]example[dot]com/app/accountView?id=' UNION SELECT SLEEP(10);--
 
 What this does: The code changes the meaning of both queries to return all the records from the accounts table.  
 
