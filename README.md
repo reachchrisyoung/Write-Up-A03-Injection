@@ -144,12 +144,12 @@ The aim here is to prevent mass disclosure of records in case of SQL injection.
 
 An application uses untrusted data in the construction of the following vulnerable SQL call:
 
-_underline text_(Sample Attack Scenario #1 Code:)
+Sample Attack Scenario #1 Code:
 
 String query = "SELECT \* FROM accounts WHERE custID='" + request.getParameter("id") + "'";
 Verbal Translation of the Code:
 
-<u>Verbal Translation of the Code</u>
+Verbal Translation of the Code
 
 String Query = SELECT \* FROM accounts WHERE custID=[apostraphe][quotes] + request.getParameter([quotes]id[quotes]) + [quotes][apostraphe][quotes][semi-colon]
 
@@ -157,7 +157,7 @@ Detailed Verbal Translation of the Code:
 
 String Query [equalsign] SELECT [backslash][asterisk] FROM accounts WHERE custID=[apostraphe][quotes] + request[period]getParameter[openparenthesis][quotes]id[quotes][closeparenthesis] [additionsign] [quotes][apostraphe][quotes][semi-colon]
 
-<u>Very Detailed Verbal Translation of the Code:</u>
+Very Detailed Verbal Translation of the Code:
 
 String[space]Query[space][equalsign][space]SELECT[space][backslash][asterisk][space]FROM[space]accounts[space]WHERE[space]custID=[apostraphe][quotes][space]+[space]request[period]getParameter[openparenthesis][quotes]id[quotes][closeparenthesis][space][additionsign][space][quotes][apostraphe][quotes][semi-colon]
 
@@ -167,19 +167,19 @@ String[space]Query[space][equalsign][space]SELECT[space][backslash][asterisk][sp
 
 Similarly, an application’s blind trust in frameworks may result in queries that are still vulnerable, (e.g., Hibernate Query Language (HQL)): 
 
-<u>Sample Attack Scenario #2 Code:</u>
+Sample Attack Scenario #2 Code:
 
 Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" + request.getParameter("id") + "'");
 
-<u>Verbal Translation of the Code:</u>
+Verbal Translation of the Code:
 
 Query HQLQuery = session.createQuery(“FROM accounts WHERE custID=[apostraphe][quotes] + request.getParameter(“id” + [quotes][apostraphe][quotes]);
 
-<u>Detailed Verbal Translation of the Code:</u>
+Detailed Verbal Translation of the Code:
 
 Query HQLQuery [equalsign] session[period]createQuery[openparenthesis][quotes]FROM accounts WHERE custID[equalsign][apostraphe][quotes] [additionsign] request[period]getParameter[openparenthesis][quotes]id[quotes][closeparenthesis] [additionsign] [quotes][apostraphe][quotes][closeparenthesis][semi-colon]
 
-<u>Very Detailed Verbal Translation of the Code:</u>
+Very Detailed Verbal Translation of the Code:
 
 Query[space]HQLQuery[space][equalsign][space]session[period]createQuery[openparenthesis][quotes]FROM[space]accounts[space]WHERE[space]custID[equalsign][apostraphe][quotes][space][additionsign][space]request[period]getParameter[openparenthesis][quotes]id[quotes][closeparenthesis][additionsign][space][quotes][apostraphe][quotes][closeparenthesis][semi-colon]
 
