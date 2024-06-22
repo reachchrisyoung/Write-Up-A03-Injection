@@ -14,6 +14,7 @@
 + Common Injections
 + How to Detect Vulnerabilities
 + How to Identify Flaws Before Production Deployment
++ How to Prevent Injection Exploits
 + Example Attack Scenarios
 + Review of Sample Attack Scenarios
 + References
@@ -107,7 +108,7 @@ To identify introduced injection flaws before production deployment, organizatio
 
 (3) Interactive application security testing tools (IAST).
 
-How to Prevent Injection Exploits
+### How to Prevent Injection Exploits
 
 Preventing injection requires keeping data separate from commands & queries:
 
