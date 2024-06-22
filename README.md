@@ -144,7 +144,7 @@ The aim here is to prevent mass disclosure of records in case of SQL injection.
 
 An application uses untrusted data in the construction of the following vulnerable SQL call:
 
-<u>Sample Attack Scenario #1 Code:</u>
+_underline text_(Sample Attack Scenario #1 Code:)
 
 String query = "SELECT \* FROM accounts WHERE custID='" + request.getParameter("id") + "'";
 Verbal Translation of the Code:
@@ -153,7 +153,7 @@ Verbal Translation of the Code:
 
 String Query = SELECT \* FROM accounts WHERE custID=[apostraphe][quotes] + request.getParameter([quotes]id[quotes]) + [quotes][apostraphe][quotes][semi-colon]
 
-<u>Detailed Verbal Translation of the Code:</u>
+Detailed Verbal Translation of the Code:
 
 String Query [equalsign] SELECT [backslash][asterisk] FROM accounts WHERE custID=[apostraphe][quotes] + request[period]getParameter[openparenthesis][quotes]id[quotes][closeparenthesis] [additionsign] [quotes][apostraphe][quotes][semi-colon]
 
