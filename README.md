@@ -8,6 +8,9 @@
 + CWE-89: SQL Injection
 + CWE–73: External Control of File Name or Path
 
+<br />
+<br />
+<br />
 
 ### Table of Contents
 
@@ -20,7 +23,9 @@
 + [Review of Sample Attack Scenarios](https://github.com/reachchrisyoung/Write-Up-A03-Injection/tree/main?tab=readme-ov-file#review-of-sample-attack-scenario-1--attack-scenario-2)
 + [References](https://github.com/reachchrisyoung/Write-Up-A03-Injection/tree/main?tab=readme-ov-file#references)
 
-
+<br />
+<br />
+<br />
 
 ### Overview
 
@@ -47,6 +52,10 @@ An application is vulnerable to an attack when:
 (4) Hospital data is directly [(a) used or (b) concatenated].  The SQL or command contains the 
       structure and malicious data in dynamic queries, commands, or stored procedures.  
 
+<br />
+<br />
+<br />
+
 ### Common Injections
 
 Some of the more common injections are:
@@ -65,7 +74,9 @@ Some of the more common injections are:
 
 NOTE: The concept is identical to all interpreters.
 
-
+<br />
+<br />
+<br />
 
 ### How to Detect Vulnerabilities
 
@@ -91,6 +102,10 @@ Strongly encouraged detection strategy: <b>Automated Testing of all data inputs<
 
 (7) XML
 
+<br />
+<br />
+<br />
+
 ### How to Identify Flaws Before Production Deployment
 
 To identify introduced injection flaws before production deployment, organizations can include the following in their CI/CD pipeline:
@@ -100,6 +115,10 @@ To identify introduced injection flaws before production deployment, organizatio
 (2) Dynamic application security testing tools (DAST), and…
 
 (3) Interactive application security testing tools (IAST).
+
+<br />
+<br />
+<br />
 
 ### How to Prevent Injection Exploits
 
@@ -131,6 +150,10 @@ NOTE: This is for any residual dynamic queries.
 #### OPTION 4: Use LIMIT and other SQL controls within queries.
 
 The aim here is to prevent mass disclosure of records in case of SQL injection.
+
+<br />
+<br />
+<br />
 
 ### Example Attack Scenarios
 
@@ -187,6 +210,10 @@ Sample Attack Scenario #2 Code:
 
 Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" + request.getParameter("id") + "'");
 
+<br />
+<br />
+<br />
+
 ### Review of Sample Attack Scenario #1 & Attack Scenario #2
 
 In both cases above, the attacker modifies the ‘id’ parameter value in their browser to send: ‘ UNION SLEEP(10);-.  For instance…
@@ -196,6 +223,10 @@ http://[nospace]example[dot]com/app/accountView?id=' UNION SELECT SLEEP(10);--
 What this does: The code changes the meaning of both queries to return all the records from the accounts table.  
 
 More dangerous attacks could: Modify or delete data or even invoke stored procedures.
+
+<br />
+<br />
+<br />
 
 ### References
 
