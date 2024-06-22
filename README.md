@@ -82,7 +82,7 @@ NOTE: The concept is identical to all interpreters.
 
 Best method of detecting if applications are vulnerable to injections: <b>Source Code Reviews.</b>
 
-Detection Automation
+<b>Detection Automation</b>
 
 Strongly encouraged detection strategy: <b>Automated Testing of all data inputs</b>, including…
 
@@ -161,20 +161,20 @@ The aim here is to prevent mass disclosure of records in case of SQL injection.
 
 An application uses untrusted data in the construction of the following vulnerable SQL call:
 
-Sample Attack Scenario #1 Code:
+<b>Sample Attack Scenario #1 Code:</b>
 
 String query = "SELECT \* FROM accounts WHERE custID='" + request.getParameter("id") + "'";
-Verbal Translation of the Code:
+Verbal Translation of the Code:</b>
 
-Verbal Translation of the Code
+<b>Verbal Translation of the Code</b>
 
 String Query = SELECT \* FROM accounts WHERE custID=[apostraphe][quotes] + request.getParameter([quotes]id[quotes]) + [quotes][apostraphe][quotes][semi-colon]
 
-Detailed Verbal Translation of the Code:
+<b>Detailed Verbal Translation of the Code:</b>
 
 String Query [equalsign] SELECT [backslash][asterisk] FROM accounts WHERE custID=[apostraphe][quotes] + request[period]getParameter[openparenthesis][quotes]id[quotes][closeparenthesis] [additionsign] [quotes][apostraphe][quotes][semi-colon]
 
-Very Detailed Verbal Translation of the Code:
+<b>Very Detailed Verbal Translation of the Code:</b>
 
 String[space]Query[space][equalsign][space]SELECT[space][backslash][asterisk][space]FROM[space]accounts[space]WHERE[space]custID=[apostraphe][quotes][space]+[space]request[period]getParameter[openparenthesis][quotes]id[quotes][closeparenthesis][space][additionsign][space][quotes][apostraphe][quotes][semi-colon]
 
@@ -184,23 +184,23 @@ String[space]Query[space][equalsign][space]SELECT[space][backslash][asterisk][sp
 
 Similarly, an application’s blind trust in frameworks may result in queries that are still vulnerable, (e.g., Hibernate Query Language (HQL)): 
 
-Sample Attack Scenario #2 Code:
+<b>Sample Attack Scenario #2 Code:</b>
 
 Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" + request.getParameter("id") + "'");
 
-Verbal Translation of the Code:
+<b>Verbal Translation of the Code:</b>
 
 Query HQLQuery = session.createQuery(“FROM accounts WHERE custID=[apostraphe][quotes] + request.getParameter(“id” + [quotes][apostraphe][quotes]);
 
-Detailed Verbal Translation of the Code:
+<b>Detailed Verbal Translation of the Code:</b>
 
 Query HQLQuery [equalsign] session[period]createQuery[openparenthesis][quotes]FROM accounts WHERE custID[equalsign][apostraphe][quotes] [additionsign] request[period]getParameter[openparenthesis][quotes]id[quotes][closeparenthesis] [additionsign] [quotes][apostraphe][quotes][closeparenthesis][semi-colon]
 
-Very Detailed Verbal Translation of the Code:
+<b>Very Detailed Verbal Translation of the Code:</b>
 
 Query[space]HQLQuery[space][equalsign][space]session[period]createQuery[openparenthesis][quotes]FROM[space]accounts[space]WHERE[space]custID[equalsign][apostraphe][quotes][space][additionsign][space]request[period]getParameter[openparenthesis][quotes]id[quotes][closeparenthesis][additionsign][space][quotes][apostraphe][quotes][closeparenthesis][semi-colon]
 
-Restatement of SQL lines from Attack Scenario #1 & Attack Scenario #2
+<b>Restatement of SQL lines from Attack Scenario #1 & Attack Scenario #2</b>
 
 Sample Attack Scenario #1 Code:
 
