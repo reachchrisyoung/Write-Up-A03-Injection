@@ -144,20 +144,20 @@ The aim here is to prevent mass disclosure of records in case of SQL injection.
 
 An application uses untrusted data in the construction of the following vulnerable SQL call:
 
-<ul>Sample Attack Scenario #1 Code:</ul>
+<u>Sample Attack Scenario #1 Code:</u>
 
 String query = "SELECT \* FROM accounts WHERE custID='" + request.getParameter("id") + "'";
 Verbal Translation of the Code:
 
-<ul>Verbal Translation of the Code</ul>
+<u>Verbal Translation of the Code</u>
 
 String Query = SELECT \* FROM accounts WHERE custID=[apostraphe][quotes] + request.getParameter([quotes]id[quotes]) + [quotes][apostraphe][quotes][semi-colon]
 
-<ul>Detailed Verbal Translation of the Code:</ul>
+<u>Detailed Verbal Translation of the Code:</u>
 
 String Query [equalsign] SELECT [backslash][asterisk] FROM accounts WHERE custID=[apostraphe][quotes] + request[period]getParameter[openparenthesis][quotes]id[quotes][closeparenthesis] [additionsign] [quotes][apostraphe][quotes][semi-colon]
 
-<ul>Very Detailed Verbal Translation of the Code:</ul>
+<u>Very Detailed Verbal Translation of the Code:</u>
 
 String[space]Query[space][equalsign][space]SELECT[space][backslash][asterisk][space]FROM[space]accounts[space]WHERE[space]custID=[apostraphe][quotes][space]+[space]request[period]getParameter[openparenthesis][quotes]id[quotes][closeparenthesis][space][additionsign][space][quotes][apostraphe][quotes][semi-colon]
 
@@ -167,19 +167,19 @@ String[space]Query[space][equalsign][space]SELECT[space][backslash][asterisk][sp
 
 Similarly, an application’s blind trust in frameworks may result in queries that are still vulnerable, (e.g., Hibernate Query Language (HQL)): 
 
-<ul>Sample Attack Scenario #2 Code:</ul>
+<u>Sample Attack Scenario #2 Code:</u>
 
 Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" + request.getParameter("id") + "'");
 
-<ul>Verbal Translation of the Code:</ul>
+<u>Verbal Translation of the Code:</u>
 
 Query HQLQuery = session.createQuery(“FROM accounts WHERE custID=[apostraphe][quotes] + request.getParameter(“id” + [quotes][apostraphe][quotes]);
 
-<ul>Detailed Verbal Translation of the Code:</ul>
+<u>Detailed Verbal Translation of the Code:</u>
 
 Query HQLQuery [equalsign] session[period]createQuery[openparenthesis][quotes]FROM accounts WHERE custID[equalsign][apostraphe][quotes] [additionsign] request[period]getParameter[openparenthesis][quotes]id[quotes][closeparenthesis] [additionsign] [quotes][apostraphe][quotes][closeparenthesis][semi-colon]
 
-<ul>Very Detailed Verbal Translation of the Code:</ul>
+<u>Very Detailed Verbal Translation of the Code:</u>
 
 Query[space]HQLQuery[space][equalsign][space]session[period]createQuery[openparenthesis][quotes]FROM[space]accounts[space]WHERE[space]custID[equalsign][apostraphe][quotes][space][additionsign][space]request[period]getParameter[openparenthesis][quotes]id[quotes][closeparenthesis][additionsign][space][quotes][apostraphe][quotes][closeparenthesis][semi-colon]
 
