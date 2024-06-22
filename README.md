@@ -10,14 +10,13 @@
 
 ### Table of Contents
 
-Notable Common Weakness Enumerations (CWEs) include:
-Overview
-Common Injections
-How to Detect Vulnerabilities
-How to Identify Flaws Before Production Deployment
-Example Attack Scenarios
-Review of Sample Attack Scenarios
-References
++ Overview
++ Common Injections
++ How to Detect Vulnerabilities
++ How to Identify Flaws Before Production Deployment
++ Example Attack Scenarios
++ Review of Sample Attack Scenarios
++ References
 
 ### Notable Common Weakness Enumerations (CWEs) include:
 
