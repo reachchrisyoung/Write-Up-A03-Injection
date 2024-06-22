@@ -216,7 +216,12 @@ Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" + request.ge
 
 ### Review of Sample Attack Scenario #1 & Attack Scenario #2
 
-In both cases above, the attacker modifies the ‘id’ parameter value in their browser to send: ‘ UNION SLEEP(10);-.  For instance…
+In both cases above, the attacker modifies the ‘id’ parameter value in their browser to send: ‘ UNION SLEEP(10);- <br />
+
+<br />
+For instance… 
+<br /> 
+<br />
 
 http://[nospace]example[dot]com/app/accountView?id=' UNION SELECT SLEEP(10);--
 
