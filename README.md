@@ -9,17 +9,16 @@
 + CWE–73: External Control of File Name or Path
 
 
-
 ### Table of Contents
 
-+ Overview
-+ Common Injections
-+ How to Detect Vulnerabilities
-+ How to Identify Flaws Before Production Deployment
-+ How to Prevent Injection Exploits
-+ Example Attack Scenarios
-+ Review of Sample Attack Scenarios
-+ References
++ [Overview](https://github.com/reachchrisyoung/Write-Up-A03-Injection/tree/main?tab=readme-ov-file#table-of-contents)
++ [Common Injections](https://github.com/reachchrisyoung/Write-Up-A03-Injection/tree/main?tab=readme-ov-file#overview)
++ [How to Detect Vulnerabilities](https://github.com/reachchrisyoung/Write-Up-A03-Injection/tree/main?tab=readme-ov-file#common-injections)
++ [How to Identify Flaws Before Production Deployment](https://github.com/reachchrisyoung/Write-Up-A03-Injection/tree/main?tab=readme-ov-file#how-to-detect-vulnerabilities)
++ [How to Prevent Injection Exploits](https://github.com/reachchrisyoung/Write-Up-A03-Injection/tree/main?tab=readme-ov-file#how-to-identify-flaws-before-production-deployment)
++ [Example Attack Scenarios](https://github.com/reachchrisyoung/Write-Up-A03-Injection/tree/main?tab=readme-ov-file#option-4-use-limit-and-other-sql-controls-within-queries)
++ [Review of Sample Attack Scenarios](https://github.com/reachchrisyoung/Write-Up-A03-Injection/tree/main?tab=readme-ov-file#review-of-sample-attack-scenario-1--attack-scenario-2)
++ [References](https://github.com/reachchrisyoung/Write-Up-A03-Injection/tree/main?tab=readme-ov-file#references)
 
 
 
