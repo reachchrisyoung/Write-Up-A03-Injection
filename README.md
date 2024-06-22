@@ -2,11 +2,13 @@
 
 ## Topic: Injection
 
-### CWE Injection Attacks:
+### Notable Common Weakness Enumerations (CWEs) include:
 
-+ Cross-site Scripting
-+ SQL Injection
-+ External Control of File Name or Path
++ CWE079: Cross-site Scripting
++ CWE-89: SQL Injection
++ CWE–73: External Control of File Name or Path
+
+
 
 ### Table of Contents
 
@@ -19,15 +21,7 @@
 + Review of Sample Attack Scenarios
 + References
 
-### Notable Common Weakness Enumerations (CWEs) include:
 
-CWE079: Cross-site Scripting
-
-
-CWE-89: SQL Injection
-
-
-CWE–73: External Control of File Name or Path
 
 ### Overview
 
