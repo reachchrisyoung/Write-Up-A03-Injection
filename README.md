@@ -186,6 +186,7 @@ Restatement of SQL lines from Attack Scenario #1 & Attack Scenario #2
 Sample Attack Scenario #1 Code:
 
 String query = "SELECT \* FROM accounts WHERE custID='" + request.getParameter("id") + "'";
+
 Sample Attack Scenario #2 Code:
 
 Query HQLQuery = session.createQuery("FROM accounts WHERE custID='" + request.getParameter("id") + "'");
