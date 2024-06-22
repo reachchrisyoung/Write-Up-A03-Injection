@@ -79,7 +79,7 @@ Best method of detecting if applications are vulnerable to injections: <b>Source
 
 Detection Automation
 
-Strongly encouraged detection strategy: Automated Testing of all data inputs, including…
+Strongly encouraged detection strategy: <b>Automated Testing of all data inputs</b>, including…
 
 (1) Parameters
 
